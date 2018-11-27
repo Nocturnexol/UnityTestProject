@@ -30,7 +30,19 @@ namespace Assets.Scripts
                 var point = new Vector3(_camera.pixelWidth / 2, _camera.pixelHeight / 2, 0);
                 var ray = _camera.ScreenPointToRay(point);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit)) StartCoroutine(SphereIndicator(hit.point));
+                if (Physics.Raycast(ray, out hit))
+                {
+                    var hitObject = hit.transform.gameObject;
+                    var target = hitObject.GetComponent<ReactiveTarget>();
+                    if (target != null)
+                    {
+                        target.ReactToHit();
+                    }
+                    else
+                    {
+                        StartCoroutine(SphereIndicator(hit.point));
+                    }
+                }
             }
         }
 
