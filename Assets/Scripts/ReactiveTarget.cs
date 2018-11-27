@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public abstract class ReactiveTarget : MonoBehaviour {
+    public class ReactiveTarget : MonoBehaviour {
         public void ReactToHit()
         {
             StartCoroutine(Die());
