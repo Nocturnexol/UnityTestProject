@@ -19,6 +19,7 @@ namespace Assets.Scripts
             var size = 12;
             var posX = _camera.pixelWidth / 2 - size / 4;
             var posY = _camera.pixelHeight / 2 - size / 2;
+            GUI.color = new Color(0, 1, 0, 0.8f);
             GUI.Label(new Rect(posX, posY, size, size), "*");
         }
 	
